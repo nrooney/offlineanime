@@ -1,15 +1,9 @@
-<img ng-src="{{phone.images[0]}}" class="phone">
+<img ng-src="{{anime.cover_image}}" class="anime">
 
-<h1>{{anime.name}}</h1>
+<h1>{{anime.title}}</h1>
 <h2>{{anime.alternate_title}}</h2>
 
 <p>{{anime.synopsis}}</p>
-
-<ul class="phone-thumbs">
-  <li ng-repeat="img in phone.images">
-    <img ng-src="{{img}}">
-  </li>
-</ul>
 
 <ul class="specs">
   <li>Episode Count: {{anime.episode_count}}</li>

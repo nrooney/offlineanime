@@ -14,7 +14,7 @@ offlineAnimeApp.config(['$routeProvider',
         templateUrl: 'partials/anime-list.html',
         controller: 'AnimeListCtrl'
       }).
-      when('/animes/:animeId', {
+      when('/animes/:slug', {
         templateUrl: 'partials/anime-detail.html',
         controller: 'AnimeDetailCtrl'
       }).
