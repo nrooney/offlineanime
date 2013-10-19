@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" ng-app="offlineAnimeApp">
+<head>
+  <meta charset="utf-8">
+  <title>Google Phone Gallery</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-route.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+</head>
+<body>
+<div ng-view></div>
+
+<!-- <body ng-controller="AnimeListCtrl">
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3">
+        <!--Sidebar content
+
+        Search: <input ng-model="query">
+        Sort by:
+        <select ng-model="orderProp">
+          <option value="name">Alphabetical</option>
+          <option value="age">Newest</option>
+        </select>
+
+      </div>
+      <div class="span9">
+        <!--Body content
+
+        <ul class="animes">
+          <li ng-repeat="anime in animes | filter:query | orderBy:orderProp">
+            <a href="#/animes/{{anime.id}}" class="thumb"><img ng-src="{{anime.cover_image}}"></a>
+            <h2><a href="http://hummingbird.me{{anime.url}}">{{anime.title}}</a><h2>
+            <p>{{anime.synopsis}}</p>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div> -->
+
+</body>
+</html>
