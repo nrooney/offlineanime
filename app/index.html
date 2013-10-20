@@ -2,20 +2,12 @@
 <html lang="en" ng-app="offlineAnimeApp">
 <head>
   <meta charset="utf-8">
-  <title>Google Phone Gallery</title>
+  <title>The Schanime List</title>
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/bootstrap-responsive.css">
 
   <style type="text/css">
-    body {
-      padding-top: 60px;
-      padding-bottom: 40px;
-    }
-    .sidebar-nav {
-      padding: 9px 0;
-    }
-
     @media (max-width: 980px) {
       /* Enable use of floated navbar text */
       .navbar-text.pull-right {
@@ -33,7 +25,6 @@
   <script src="js/controllers.js"></script>
 </head>
 <body>
-<div ng-view></div>
 
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
@@ -57,11 +48,8 @@
         </div>
       </div>
     </div>
-
-
-    
+      <div ng-view></div> 
       <hr>
-
       <footer>
         <p>&copy; Company 2013</p>
       </footer>
