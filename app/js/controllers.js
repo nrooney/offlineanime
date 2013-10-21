@@ -32,6 +32,31 @@ function setStorage(appData){
 	localStorage.setItem('appData', dataToStore);
 }
 
+function imageError(){	
+	console.log('IMAGE ERROR: Load blob');
+
+	//check IDB for blob
+
+	//if exists then show
+
+	//if not attempt to load from localhost
+
+	//save to iDB
+
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function(){
+	    if (this.readyState == 4 && this.status == 200){
+	        //console.log(this.response, typeof this.response);
+	        var img = document.getElementById('imagetoblob');
+	        var url = window.URL = window.webkitURL;
+	        img.src = url.createObjectURL(this.response);
+	    }
+	}
+	xhr.open('GET', '/offlineanime/app/img/404.png');
+	xhr.responseType = 'blob';
+	xhr.send();        
+}
+
 /* Controllers */
 var offlineAnimeControllers = angular.module('offlineAnimeControllers', []);
 
@@ -53,6 +78,7 @@ offlineAnimeControllers.controller('AnimeListCtrl', ['$scope', '$http',
     $scope.orderProp = 'show_type';
   }]);
 
+//offlineAnimeControllers.controller('AnimeDetailCtrl', ['$scope', '$routeParams', 'UserService', function($scope, $routeParams, UserService) {
 offlineAnimeControllers.controller('AnimeDetailCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
 	var appData = getStorage();
 	for (var i = 0; i < appData.length; ++i) {

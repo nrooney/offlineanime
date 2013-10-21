@@ -26,3 +26,11 @@
     margin-top: -140px;
 	background-color: rgba(0,0,0,0.7);
 }
+
+.sidebar-nav form{
+	margin: 0px;
+}
+
+.well.sidebar-nav{
+	padding: 10px;
+}

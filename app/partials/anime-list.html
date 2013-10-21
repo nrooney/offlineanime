@@ -4,32 +4,30 @@
       <div class="span3">
         <!--Sidebar content-->
         <div class="well sidebar-nav">
-          <h3>Find New Anime</h3>
+          <h4>Find New Anime</h4>
           <form name="findAnimeForm" ng-controller="findAnimeFormCtrl" ng-submit="submit()">
-              Title: <input name="animeSlug" ng-model="anime.slug" required>
+              <input name="animeSlug" ng-model="anime.slug" style="width:205px" required>
+              <input type="submit" class="btn btn-success" value="Go" style="margin-bottom: 9px;"/>
               <span class="error" ng-show="findAnimeForm.input.$error.required">Required!</span><br>
-              <tt>Title = {{anime.slug}}</tt><br>
+              <!--<tt>Title = {{anime.slug}}</tt><br>
               <!--<tt>input.$valid = {{findAnimeForm.animeTitle.$valid}}</tt><br>
               <tt>input.$error = {{findAnimeForm.animeTitle.$error}}</tt><br>
               <tt>$valid = {{findAnimeForm.$valid}}</tt><br>
               <tt>$error.required = {{!!findAnimeForm.$error.required}}</tt><br>-->
           </form>
-        </div><!--/.well -->
-      </div>
-      <div class="span9">
-        <!--Body content-->
-        <div class="well span12">
-          <h3>Search Listed Anime</h3>
-          Search: <input ng-model="query">
-          Sort by:
+          <h4>Search Listed Anime</h4>
+          <input ng-model="query">
+          <h4>Sort by:</h4>
           <select ng-model="orderProp">
             <option value="title">Alphabetical</option>
           </select>
         </div>
+      </div>
 
+      <div class="span9">
         <div ng-repeat="anime in animes | filter:query | orderBy:orderProp">
           <div class="span4 animelistitem" ng-show="anime">
-            <a href="#/animes/{{anime.slug}}" class="thumb"><img ng-src="{{anime.cover_image}}"></a>
+            <a href="#/animes/{{anime.slug}}" class="thumb"><img ng-src="{{anime.cover_image}}" onerror='imageError()'></a>
             <h3><a href="#/animes/{{anime.slug}}">{{anime.title}}</a></h3>
             <ul>
               <li ng-repeat="genre in anime.genres">{{genre.name}}</li>

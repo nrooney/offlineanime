@@ -1,21 +1,23 @@
 <!-- QUESTION: Inline styles in Angular templates?! Yes or no?! -->
 
-<h1>{{anime.title}}</h1>
-<h2>{{anime.alternate_title}}</h2>
+  <a style="float:right; margin: -10px -15px 0 0;" href="#" class="btn btn-inverse"><i class="icon-white icon-chevron-left"></i> Back</a>
 
-<img ng-src="{{anime.cover_image}}" class="anime" style="width:100%; margin-top:10px">
+  <h1>{{anime.title}}</h1>
+  <h2>{{anime.alternate_title}}</h2>
 
-<div class="animedetailitems">
-   <div class="animedetailitemstext">
-      <p>{{anime.synopsis}}</p>
-   </div>
-</div>​​​​​​​​​​​​​​​​​​​​​
+  <img id="imagetoblob" ng-src="kejkwejhkw{{anime.cover_image}}" class="anime" onerror='imageError()' style="width:100%; margin-top:10px">
 
-<ul>
-  <li>Episode Count: {{anime.episode_count}}</li>
-  <li>Show Type: {{anime.show_type}}</li>
-  <li>Status: {{anime.status}}</li>
-  <li ng-repeat="genre in anime.genres">Genre: {{genre.name}}</li>
-</ul>
+  <div class="animedetailitems">
+     <div class="animedetailitemstext">
+        <p>{{anime.synopsis}}</p>
+     </div>
+  </div>​​​​​​​​​​​​​​​​​​​​​
+
+  <ul>
+    <li>Episode Count: {{anime.episode_count}}</li>
+    <li>Show Type: {{anime.show_type}}</li>
+    <li>Status: {{anime.status}}</li>
+    <li ng-repeat="genre in anime.genres">Genre: {{genre.name}}</li>
+  </ul>
 
 
