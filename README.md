@@ -9,6 +9,16 @@ This app showcases HTML5 offline capabilities using Angular JS. The offline capa
 
 The app is a simple data driven app for reading and writing items to a database. The items in this case are "Anime" that the user has watched (or wants to add to a list for any reason). The app will display a list of anime, let the user view an individual anime, and search for new anime.
 
+noOffline Branch
+----------------
+
+I removed the offline capabilities in this branch so you can add them back in. These are the files that will need editing. Try to follow the comments!
+
+* app/js/controllers.js: LocalStorage is missing!
+* app/index.html: appCache declaration is missing!
+* app.appcache: appCache has no declarations!
+* indexedDBexample.html: you can also try fixing my indexedDB example! The fixer will receive a bottle of wine or a couple of good belgian beers!
+
 Key Resources
 -------------
 

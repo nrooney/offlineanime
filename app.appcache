@@ -3,25 +3,15 @@ CACHE MANIFEST
 
 # Explicitly cached 'master entries' 
 CACHE:   
-/offlineanime/anime.json
-/offlineanime/app/css/app.css
-/offlineanime/app/css/bootstrap-responsive.css
-/offlineanime/app/css/bootstrap.css
-/offlineanime/app/img/404.png   
-/offlineanime/app/img/glyphicons-halflings.png   
-/offlineanime/app/img/glyphicons-halflings-white.png
-/offlineanime/app/lib/angular/angular.js   
-/offlineanime/app/lib/angular/angular-route.js       
-/offlineanime/app/js/controllers.js    
-/offlineanime/app/js/app.js
-/offlineanime/app/partials/anime-list.html
-/offlineanime/app/partials/anime-detail.html 
+# ADD STUFF
+# NOTE: You will need css files, js files, img files, angular js files, templates
 
 # Resources that require the user to be online. 
 NETWORK:
-# Don't actually need other URLs because * covers them       
-# Needed * for ajax requests
-*
+# ADD ONE THING!
+# HINT: It's a star (it makes ajax work)
+# Try adding an external URL, does it work?!
 
 FALLBACK:
-http://static.hummingbird.me http://localhost:8888/offlineanime/app/img/404.png #doesn't work!
+# ADD STUFF
+# We couldn't get this to work! Could you!?
