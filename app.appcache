@@ -3,11 +3,12 @@ CACHE MANIFEST
 
 # Explicitly cached 'master entries' 
 CACHE:   
+/offlineanime/anime.json
 /offlineanime/app/css/app.css
 /offlineanime/app/css/bootstrap-responsive.css
 /offlineanime/app/css/bootstrap.css
 /offlineanime/app/img/404.png   
-/offlineanime/app/img/glyphicons-halflings.png
+/offlineanime/app/img/glyphicons-halflings.png   
 /offlineanime/app/img/glyphicons-halflings-white.png
 /offlineanime/app/lib/angular/angular.js   
 /offlineanime/app/lib/angular/angular-route.js       

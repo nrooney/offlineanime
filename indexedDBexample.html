@@ -30,7 +30,7 @@ function indexedDBOk() {
 
 document.addEventListener("DOMContentLoaded", function() {
 	if(!indexedDBOk) return; //No support? Go in the corner and pout.
-	var openRequest = indexedDB.open("test36",1); //if change name of a store need to change name of an image
+	var openRequest = indexedDB.open("test38",1); //if change name of a store need to change name of an image
 	
 	openRequest.onupgradeneeded = function(e) {
 		var thisDB = e.target.result;
@@ -80,7 +80,7 @@ function addImage(e) {
 
 function getImage(e) {
 	var transaction = db.transaction(["images"],"readonly");
-	var store = transaction.objectStore("images");
+	//var store = transaction.objectStore("images");
 	var index = store.index("id");
 	//Make the range depending on what type we are doing
 	var searchKey = IDBKeyRange.only(id); 
