@@ -5,6 +5,9 @@
  */
 var offlineAnimeControllers = angular.module('offlineAnimeControllers', []);
 
+/*
+ * CONTROLLERS: ANIME LIST
+ */
 offlineAnimeControllers.controller('AnimeListCtrl', ['$scope', '$http',
   function AnimeListCtrl($scope, $http) {
   	var appData = getStorage(); // LOCAL STORAGE: Go get our storage!
@@ -25,6 +28,9 @@ offlineAnimeControllers.controller('AnimeListCtrl', ['$scope', '$http',
     $scope.orderProp = 'show_type';
   }]);
 
+/*
+ * CONTROLLERS: ANIME DETAIL
+ */
 offlineAnimeControllers.controller('AnimeDetailCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
 	var appData = getStorage();
 	for (var i = 0; i < appData.length; ++i) {
@@ -35,6 +41,9 @@ offlineAnimeControllers.controller('AnimeDetailCtrl', ['$scope', '$routeParams',
 	}
 }]);
 
+/*
+ * CONTROLLERS: FORM
+ */
 offlineAnimeControllers.controller('findAnimeFormCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
 	$scope.submit = function() {
 		var appData = getStorage();
@@ -83,18 +92,14 @@ offlineAnimeControllers.controller('findAnimeFormCtrl', ['$scope', '$http', '$lo
  * LOCAL STORAGE FUNCTIONS
  */
 function getStorage(){
-	//localStorage.clear();
-	if (localStorage.getItem('appData')) { //try local storage
-    	var appData = JSON.parse(localStorage.getItem('appData')); //// LOCAL STORAGE: getItem()
-    	return appData;
-	} 
-	else{ 
-		return null;
-	}
+	
+	// DO STUFF
+
 }
 function setStorage(appData){
-	var dataToStore = JSON.stringify(appData);
-	localStorage.setItem('appData', dataToStore); // LOCAL STORAGE: setItem()
+	
+	// DO STUFF
+	
 }
 
 /*
