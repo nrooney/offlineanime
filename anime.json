@@ -1,0 +1,127 @@
+[
+    {
+        "slug": "steins-gate",
+        "status": "Finished Airing",
+        "url": "/anime/steins-gate",
+        "title": "Steins;Gate",
+        "alternate_title": null,
+        "episode_count": 24,
+        "cover_image": "http://static.hummingbird.me/anime/cover_images/000/005/646/thumb/5646.jpg?1375237389",
+        "synopsis": "Steins;Gate is set in the summer of 2010, approximately one year after the events that took place in Chaos;Head, in Akihabara.\r\nSteins;Gate is about a group of friends who have customized their microwave into a device that can send text messages to the past. As they perform different experiments, an organization named SERN, who has been doing their own research on time travel, tracks them down and now the characters have to find a way to avoid being captured by them.\r\n(Sources: VNDB, Wikipedia)",
+        "show_type": "TV",
+        "genres": [
+            {
+                "name": "Sci-Fi"
+            },
+            {
+                "name": "Thriller"
+            }
+        ]
+    },
+    {
+        "slug": "genshiken",
+        "status": "Finished Airing",
+        "url": "/anime/genshiken",
+        "title": "Genshiken",
+        "alternate_title": null,
+        "episode_count": 12,
+        "cover_image": "http://static.hummingbird.me/anime/cover_images/000/000/215/thumb/215.jpg?1375232684",
+        "synopsis": "Sasahara Kanji is a college freshman who decides to join a student society to share his hidden thoughts on manga, anime and gaming.\r\nWhen he first visited Genshiken, short for \"Gendai Shikaku Bunka Kenkyuu Kai\" (Society for the Study of Modern Visual Culture), his groundless pride was destroyed by the plotting of Madarame, a sophomore student in Genshiken, but he still couldn't admit that he is an otaku.\r\nHowever, as he participates in society activities such as visiting dojin (private publishing) shops and anime festivals, and hangs out with other society members Kosaka (a hardcore otaku despite his extreme eccentricities and good looks), Kosaka's girlfriend Kasuga Saki (who isn't really an otaku), Ohno (a cosplayer) and the others, he opens his mind and resolves that he will make his way into the otaku world. With their help, Sasahara slowly adjusts to otaku life in Genshiken.\r\n(Source: AnimeNfo)",
+        "show_type": "TV",
+        "genres": [
+            {
+                "name": "Comedy"
+            },
+            {
+                "name": "Slice of Life"
+            },
+            {
+                "name": "Parody"
+            }
+        ]
+    },
+    {
+        "slug": "cowboy-bebop",
+        "status": "Finished Airing",
+        "url": "/anime/cowboy-bebop",
+        "title": "Cowboy Bebop",
+        "alternate_title": null,
+        "episode_count": 26,
+        "cover_image": "http://static.hummingbird.me/anime/cover_images/000/000/001/thumb/1.png?1375232521",
+        "synopsis": "Enter a world in the distant future,where Bounty Hunters roam the solar system.Spike and Jet,bounty hunting partners,set out on journeys in an ever struggling effort to win bounty rewards to survive.\r\nWhile traveling,they meet up with other very interesting people.Could Faye,the beautiful and ridiculously poor gambler,Edward,the computer genius,and Ein,the engineered dog be a good addition to the group?",
+        "show_type": "TV",
+        "genres": [
+            {
+                "name": "Action"
+            },
+            {
+                "name": "Adventure"
+            },
+            {
+                "name": "Comedy"
+            },
+            {
+                "name": "Drama"
+            },
+            {
+                "name": "Sci-Fi"
+            },
+            {
+                "name": "Space"
+            }
+        ]
+    },
+    {
+        "slug": "lucky-star",
+        "status": "Finished Airing",
+        "url": "/anime/lucky-star",
+        "title": "Lucky☆Star",
+        "alternate_title": null,
+        "episode_count": 24,
+        "cover_image": "http://static.hummingbird.me/anime/cover_images/000/001/697/thumb/1697.jpg?1375233823",
+        "synopsis": "Having fun in school, doing homework together, cooking and eating, playing videogames, watching anime. All those little things make up the daily life of the anime- and chocolate-loving Izumi Konata and her friends. Sometimes relaxing but more than often simply funny! \n(Source: AniDB)",
+        "show_type": "TV",
+        "genres": [
+            {
+                "name": "Comedy"
+            },
+            {
+                "name": "Slice of Life"
+            },
+            {
+                "name": "School"
+            },
+            {
+                "name": "Parody"
+            }
+        ]
+    },
+    {
+        "slug": "xxxholic",
+        "status": "Finished Airing",
+        "url": "/anime/xxxholic",
+        "title": "xxxHOLiC",
+        "alternate_title": null,
+        "episode_count": 24,
+        "cover_image": "http://static.hummingbird.me/anime/cover_images/000/000/763/thumb/763.jpg?1375233101",
+        "synopsis": "Kimihiro Watanuki is a young boy with a cursed gift. He has the ability to see evil spirits, and somehow they seem attracted to himself. One day he meets a misterious woman who names herself Yuuko. She claims to have the means to end his torment, but she never works for free, and she wouldn't help him until he works for her enough to pay for her services. Thus he starts to work in her shop and discovers that in that place, nothing is what it seems. (Source: ANN)",
+        "show_type": "TV",
+        "genres": [
+            {
+                "name": "Comedy"
+            },
+            {
+                "name": "Drama"
+            },
+            {
+                "name": "Mystery"
+            },
+            {
+                "name": "Supernatural"
+            },
+            {
+                "name": "Psychological"
+            }
+        ]
+    }
+]

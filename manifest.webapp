@@ -1,0 +1,13 @@
+{
+  "name": "Schuki's Anime List",
+  "description": "Listing schuki's anime so she doesn't forget what she's watched",
+  "launch_path": "/",
+  "icons": {
+    "64": "/app/img/icon64.jpg"
+  },
+  "developer": {
+    "name": "Schuki",
+    "url": "http://thisnatasha.com"
+  },
+  "default_locale": "en"
+}
