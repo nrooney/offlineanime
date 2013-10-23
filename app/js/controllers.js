@@ -1,75 +1,22 @@
 'use strict';
 
-// getStorage();
-
-// addEvent(document.querySelector('#local'), 'keyup', function () {
-//   localStorage.setItem('value', this.value);
-//   localStorage.setItem('timestamp', (new Date()).getTime());
-// });
-
-// addEvent(document.querySelector('#clear'), 'click', function () {
-//   sessionStorage.clear();
-//   localStorage.clear();
-  
-//   document.querySelector('#previous').innerHTML = '';
-//   getStorage('local');
-//   getStorage('session');
-// });
-
-/* Local Storage Functions*/
-function getStorage(){
-	//localStorage.clear();
-	if (localStorage.getItem('appData')) { //try local storage
-    	var appData = JSON.parse(localStorage.getItem('appData'));
-    	return appData;
-	} 
-	else{ 
-		return null;
-	}
-}
-function setStorage(appData){
-	var dataToStore = JSON.stringify(appData);
-	localStorage.setItem('appData', dataToStore);
-}
-
-function imageError(){	
-	console.log('IMAGE ERROR: Load blob');
-
-	//check IDB for blob
-
-	//if exists then show
-
-	//if not attempt to load from localhost
-
-	//save to iDB
-
-	var xhr = new XMLHttpRequest();
-	xhr.onreadystatechange = function(){
-	    if (this.readyState == 4 && this.status == 200){
-	        //console.log(this.response, typeof this.response);
-	        var img = document.getElementById('imagetoblob');
-	        var url = window.URL = window.webkitURL;
-	        img.src = url.createObjectURL(this.response);
-	    }
-	}
-	xhr.open('GET', '/offlineanime/app/img/404.png');
-	xhr.responseType = 'blob';
-	xhr.send();        
-}
-
-/* Controllers */
+/*
+ * CONTROLLERS
+ */
 var offlineAnimeControllers = angular.module('offlineAnimeControllers', []);
 
 offlineAnimeControllers.controller('AnimeListCtrl', ['$scope', '$http',
   function AnimeListCtrl($scope, $http) {
-  	var appData = getStorage();
+  	var appData = getStorage(); // LOCAL STORAGE: Go get our storage!
   	
+  	// LOCAL STORAGE: if storage returned data then load into controller!
   	if (appData) {
-  		console.log('Loading Data from Storage');
+  		console.log('LOCAL STORAGE: Loading Data from Storage');
     	$scope.animes = appData;
 	} 
+	// LOCAL STORAGE: if not then reload from JSON file and store to storage (if online! Error otherwise)
 	else {
-		console.log('Storage is empty - Loading from remote JSON File');
+		console.log('LOCAL STORAGE: Storage is empty - Loading from remote JSON File');
 		$http.get('/offlineanime/anime.json').success(function(data) {
 			setStorage(data)
 			$scope.animes = data;
@@ -78,7 +25,6 @@ offlineAnimeControllers.controller('AnimeListCtrl', ['$scope', '$http',
     $scope.orderProp = 'show_type';
   }]);
 
-//offlineAnimeControllers.controller('AnimeDetailCtrl', ['$scope', '$routeParams', 'UserService', function($scope, $routeParams, UserService) {
 offlineAnimeControllers.controller('AnimeDetailCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
 	var appData = getStorage();
 	for (var i = 0; i < appData.length; ++i) {
@@ -100,62 +46,65 @@ offlineAnimeControllers.controller('findAnimeFormCtrl', ['$scope', '$http', '$lo
 		    if(appData[i].slug == slug){
 				$scope.anime = appData[i];
 				haveitalready = true;
-				console.log('We already have "' + slug + '" anime');
-				$location.path('/animes/' + slug);
+				console.log('APP FUNCTIONALITY: We already have "' + slug + '" anime');
+				$location.path('/animes/' + slug); //if so display note to user
 				break;
 			}
 		}
-		//if so display note to user
+		
 		//if not go get it
 		if(!haveitalready){
-			console.log('looking for it');
+			console.log('APP FUNCTIONALITY: looking for it ' + slug);
 			$http({
 			    url: "https://hummingbirdv1.p.mashape.com/anime/" + slug,
 			    method: "GET",
-			    headers: {"X-Mashape-Authorization":"0hyAhVOeMH7ypTFLqOqTwgOJzs37vZ9e"} //HIDE
+			    headers: {"X-Mashape-Authorization":"0hyAhVOeMH7ypTFLqOqTwgOJzs37vZ9e"}, //HIDE
+			    cache: false
 			}).success(function(data, status, headers, config) {
 				if(data.slug == slug){
 					 //add to DB and push back to local storage
-					console.log('Found "' + slug + '" anime, adding to LocalStorage');
+					console.log('APP FUNCTIONALITY: Found "' + slug + '" anime');
+					console.log('LOCAL STORAGE: adding to LocalStorage');
 					$scope.anime = data;
 					appData.push(data);
 			    	setStorage(appData);
-			    	$location.path('/animes/' + slug);
+			    	$location.path('/animes/' + slug); //display it
 				}
 				else{
-					console.log('Cannot find "' + slug + '" anime');
+					console.log('APP FUNCTIONALITY: Cannot find "' + slug + '" anime');
+					document.getElementById('errorMessage').innerHTML='Cannot find "' + slug + '" anime';;
 				}
 			});
 		}
-		//display it
-		
   	};
 }]);
 
-// offlineAnimeControllers.controller('AnimeListCtrl', ['$scope', '$http', function AnimeListCtrl($scope, $http) {
-// 	var NamesOfAnime = ["steins-gate", "lucky-st	ar", "genshiken", "cowboy-bebop","naruto"];
-// 	$scope.animes = new Array();
+/*
+ * LOCAL STORAGE FUNCTIONS
+ */
+function getStorage(){
+	//localStorage.clear();
+	if (localStorage.getItem('appData')) { //try local storage
+    	var appData = JSON.parse(localStorage.getItem('appData')); //// LOCAL STORAGE: getItem()
+    	return appData;
+	} 
+	else{ 
+		return null;
+	}
+}
+function setStorage(appData){
+	var dataToStore = JSON.stringify(appData);
+	localStorage.setItem('appData', dataToStore); // LOCAL STORAGE: setItem()
+}
 
-// 	NamesOfAnime.forEach(function (eachName, index){
-// 		$http({
-// 		    url: "https://hummingbirdv1.p.mashape.com/anime/" + eachName,
-// 		    method: "GET",
-// 		    headers: {"X-Mashape-Authorization":"0hyAhVOeMH7ypTFLqOqTwgOJzs37vZ9e"} //should be hiding this
-// 		}).success(function(data, status, headers, config) {
-// 		    $scope.animes.push(data);
-// 		});
-// 	});
-//   	$scope.orderProp = 'releaseDate';
-// }]);
+/*
+ * IMAGE DETECT ON ERROR AND SHOW CACHED IMAGE
+ */
+function imageError(){	
+	console.log('IMAGE ERROR: Cannot find images');      
+    var imgs = document.getElementsByClassName('offlineImage');
+	for(var i=0; i<imgs.length; i++) { 
+	  imgs[i].src = "/offlineanime/app/img/404.png";  
+	}
+}
 
-
-// offlineAnimeControllers.controller('AnimeDetailCtrl', ['$scope', '$routeParams', '$http',
-//   function($scope, $routeParams, $http) {
-//     $http({
-// 	    url: "https://hummingbirdv1.p.mashape.com/anime/" + $routeParams.slug,
-// 	    method: "GET",
-// 	    headers: {"X-Mashape-Authorization":"0hyAhVOeMH7ypTFLqOqTwgOJzs37vZ9e"} //should be hiding this
-// 	}).success(function(data, status, headers, config) {
-// 	    $scope.anime = data;
-// 	});
-//  }]);

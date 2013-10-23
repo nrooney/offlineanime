@@ -9,12 +9,8 @@
               <input name="animeSlug" ng-model="anime.slug" style="width:205px" required>
               <input type="submit" class="btn btn-success" value="Go" style="margin-bottom: 9px;"/>
               <span class="error" ng-show="findAnimeForm.input.$error.required">Required!</span><br>
-              <!--<tt>Title = {{anime.slug}}</tt><br>
-              <!--<tt>input.$valid = {{findAnimeForm.animeTitle.$valid}}</tt><br>
-              <tt>input.$error = {{findAnimeForm.animeTitle.$error}}</tt><br>
-              <tt>$valid = {{findAnimeForm.$valid}}</tt><br>
-              <tt>$error.required = {{!!findAnimeForm.$error.required}}</tt><br>-->
           </form>
+          <p id="errorMessage"></p>
           <h4>Search Listed Anime</h4>
           <input ng-model="query">
           <h4>Sort by:</h4>
@@ -27,7 +23,7 @@
       <div class="span9">
         <div ng-repeat="anime in animes | filter:query | orderBy:orderProp">
           <div class="span4 animelistitem" ng-show="anime">
-            <a href="#/animes/{{anime.slug}}" class="thumb"><img ng-src="{{anime.cover_image}}" onerror='imageError()'></a>
+            <a href="#/animes/{{anime.slug}}" class="thumb"><img class="offlineImage" onerror="imageError()" ng-src="{{anime.cover_image}}"></a>
             <h3><a href="#/animes/{{anime.slug}}">{{anime.title}}</a></h3>
             <ul>
               <li ng-repeat="genre in anime.genres">{{genre.name}}</li>
@@ -40,38 +36,3 @@
   </div>
 
 
-
-
-
-<!--<div ng-repeat="anime in animes | filter:query | orderBy:slug">
-  <span ng-switch on="$index % 3">
-    <span ng-switch-when="0">
-      <div class="row-fluid">
-        <div class="span4 animelistitem" ng-show="animes[$index+0]">
-          <a href="#/animes/{{animes[$index+0].slug}}" class="thumb"><img ng-src="{{animes[$index+0].cover_image}}"></a>
-          <h3><a href="#/animes/{{animes[$index+0].slug}}">{{animes[$index+0].title}}</a></h3>
-          <ul>
-            <li ng-repeat="genre in animes[$index+0].genres">{{genre.name}}</li>
-          </ul>
-          <a href="#/animes/{{animes[$index+0].slug}}" class="btn btn-primary">More Info <i class="icon-white icon-chevron-down"></i></a>
-        </div>
-        <div class="span4 animelistitem" ng-show="animes[$index+1]">
-          <a href="#/animes/{{animes[$index+1].slug}}" class="thumb"><img ng-src="{{animes[$index+1].cover_image}}"></a>
-          <h3><a href="#/animes/{{animes[$index+1].slug}}">{{animes[$index+1].title}}</a></h3>
-          <ul>
-            <li ng-repeat="genre in animes[$index+0].genres">{{genre.name}}</li>
-          </ul>
-          <a href="#/animes/{{animes[$index+1].slug}}" class="btn btn-primary">More Info <i class="icon-white icon-chevron-down"></i></a>
-        </div>
-        <div class="span4 animelistitem" ng-show="animes[$index+2]">
-          <a href="#/animes/{{animes[$index+2].slug}}" class="thumb"><img ng-src="{{animes[$index+2].cover_image}}"></a>
-          <h3><a href="#/animes/{{animes[$index+2].slug}}">{{animes[$index+2].title}}</a></h3>
-          <ul>
-            <li ng-repeat="genre in animes[$index+0].genres">{{genre.name}}</li>
-          </ul>
-          <a href="#/animes/{{animes[$index+2].slug}}" class="btn btn-primary">More Info <i class="icon-white icon-chevron-down"></i></a>
-        </div>
-      </div>
-    </span>
-  </span>
-</div>-->
